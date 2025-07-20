@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');/* Comando para importar uma fonte que está no google fontes */
+
+@font-face {
+    /* Comando para importar uma fonte que está em uma pasta, ela é tipo otf (opentype) */
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+/*
+#ebe5c5
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+:root {
+    /* Comando para criar variáveis, temos variáveis de cores e de fontes */
+    --cor0: #ebe5c5;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --font-android: 'Android', cursive;
+}
+
+* {
+    /* código global para as margens sumirem com margem de 0px e padding de 0px */
+    margin: 0px; 
+    padding: 0px;
+}
+
+body {
+    /* No Body temos o plano de fundo de cor variável 0 e a família da fonte tipo variável padrão */
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after {
+    content: '\1F517';
+}
+
+header {
+    /* Na Header temos o plano de fundo de imagem com degradê linear para baixo na cor variável 3 para a cor variável 5, texto alinhado para o centro e padding emcima de 40px */
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    background-color: var(--cor4);
+    text-align: center;
+    padding-top: 40px;
+}
+
+header > h1 {
+    /* Dentro da Header os h1 terão cor da letra branca, família de fonte variável tipo em destaque, tamanho da fonte 3em, margem embaixo de 20px e sombra de texto 2, 2, 0, preta com transparência */
+    font-weight: normal;
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+    
+}
+
+header > p {
+    /* Dentro da Header os Parágrafos terão família da fonte do tipo variável padrão, tamanho da fonte 1.2em, cor das letras branca, o máximo de largura 600px, padding para direita 10px e para esquerda de 10px, margem automática e sombra do texto 2, 2, 0, preta com transparência */
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 600px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.39);
+}
+
+nav {
+    /* Na Nav temos o plano de fundo de cor variável 5, padding de 10px e a sombra da caixa 0, 7, 7 e preta com transparência  */
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow:0px 7px 7px rgba(0, 0, 0, 0.329);
+}
+
+nav > a {
+    /* Dentro da Nav os Links terão letra cor branca, padding de 10px, raio da borda sem raio, decoração de texto sem decoração, tipo de fonte grossa e a duração da transição do efeito de 0,5 */
+    color: var(--cor1);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5;
+}
+
+nav > a:hover {
+    /* Dentro da Nav os Links terão efeitos visuais de ativação com plano de fundo de cor variável 3 e as letras na cor variável 5 */
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+
+main {
+    /* Na Main o min de largura é de 300px e o máximo de 1000px, a margem automática para centralizar ela, uma margem embaixo de 30px, um padding de 20px, um plano de fundo de cor branca, sombra na caixa e bordas nos dois lados apenas em baixo de 10 px */
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.432);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px
+}
+
+main h1 {
+    /* Dentro da Main os h1 terão cor variável 4 e a família da fonte do tipo Android*/
+    color: var(--cor5);
+    font-family: var(--font-android);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+main h2 {
+    /* dentro da main, no h2 ele tem uma família da fonte no tipo Android, cor variável 4 e um tamanho de fonte de 1.3em, um fundo de imagem degradê com a cor variável 1 até ficar transparente, e um texto identado de 8px */
+    font-family: var(--font-android);
+    color: var(--cor4);
+    font-weight: normal;
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 8px;
+}
+
+main img {
+    width: 100%;
+}
+
+main img.pequena {
+    /* temos uma class nessa imagem, ela foi transformada em uma box-level e tem uma margem automatica para centralizar ela */
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+main p {
+    /* paragrafos com margens, texto alinhado, indentado e altura da linha de 2em */
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em;
+}
+
+main strong {
+    /* Dentro da main as tags Fortes terão a cor variável 4 e o tipo de fonte Grossa */
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+main a {
+    /* Dentro da Main os Links tem a decoração de texto sem decoração, o tipo de fonte grossa a cor da fonte é variável 4, o plano de fundo de cor variável 5 e um padding em cima e embaixo de 2px e dos lados de 6px */
+    text-decoration: none; 
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+
+main a:hover {
+    /* Dentro da Main os efeitos visuais (ativação ao passar o mouse em cima) dos links tem uma decoração de texto sobre a linha e as letras na cor variável 4 */
+    text-decoration: underline; 
+    color: var(--cor4);
+}
+
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 50%;
+    position: relative;
+}   
+
+div.video > iframe {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        height: 90%;
+        width: 90%;
+}
+
+aside {
+    background-color: var(--cor1);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px -0px -10px;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.267);
+}
+
+aside > ul {
+    list-style-position: inside;
+    columns: 2;
+    list-style-type: '\2714\00A0\00A0';
+}
+
+footer {
+    /* No rodapé tem um plano de fundo de cor variável 5 e as letras na cor branca*/ 
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 0.8em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.452);
+}
+
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+ 
+}
